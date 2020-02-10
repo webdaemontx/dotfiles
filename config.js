@@ -186,7 +186,6 @@ module.exports = {
 	  'homebrew/cask-fonts',
 	  'homebrew/core',
 	  'homebrew/services',
-	  'sambadevi/powerlevel9k',
 	  'sass/sass'
   ],
   cask: [
@@ -206,23 +205,16 @@ module.exports = {
     'feedly',
     'fork',
     'github',
-    //'evernote',
-    'flux',
-    'gpg-suite',
-    'ireadfast',
+    'evernote',
     'iterm2',
     'kitematic',
     'lastpass',
-    'little-snitch',
-    'macbreakz',
-    'micro-snitch',
     'nvalt',
     'phpstorm',
     'postman',
     'sequel-pro',
     'signal',
     //'macvim',
-    'sizeup',
     'sketchup',
     'slack',
     'spotify',
@@ -328,7 +320,8 @@ module.exports = {
   ],
   wget: [
 	  'https://download.mozilla.org/?product=firefox-devedition-latest-ssl&os=osx&lang=en-US',
-	  'https://www.google.com/chrome/browser/canary.html?platform=mac'
+    'https://www.google.com/chrome/browser/canary.html?platform=mac',
+
   ],
 
 };

@@ -229,9 +229,14 @@ if [[ "$CURRENTSHELL" != "/usr/local/bin/zsh" ]]; then
   sudo dscl . -change /Users/$USER UserShell $SHELL /usr/local/bin/zsh > /dev/null 2>&1
   ok
 fi
+# Not using powerlevel9k right now...
+# if [[ ! -d "./oh-my-zsh/custom/themes/powerlevel9k" ]]; then
+#   git clone https://github.com/bhilburn/powerlevel9k.git oh-my-zsh/custom/themes/powerlevel9k
+# fi
 
-if [[ ! -d "./oh-my-zsh/custom/themes/powerlevel9k" ]]; then
-  git clone https://github.com/bhilburn/powerlevel9k.git oh-my-zsh/custom/themes/powerlevel9k
+# Install the Spaceship Prompt
+if [[ ! -d "./oh-my-zsh/custom/themes/spaceship-prompt" ]]; then
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 fi
 
 bot "Dotfiles Setup"
