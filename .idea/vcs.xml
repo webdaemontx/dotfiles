@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homedir/.vim/bundle/SuperTab" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homedir/.vim/bundle/Vundle.vim" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homedir/.vim/bundle/editorconfig-vim" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homedir/.vim/bundle/editorconfig-vim/tests/core/tests" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homedir/.vim/bundle/editorconfig-vim/tests/plugin/spec/plugin_tests" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homedir/.vim/bundle/gundo.vim" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homedir/.vim/bundle/node.js" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homedir/.vim/bundle/syntastic" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homedir/.vim/bundle/tabular" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homedir/.vim/bundle/vim-airline" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homedir/.vim/bundle/vim-airline-themes" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homedir/.vim/bundle/vim-easygrep" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homedir/.vim/bundle/vim-esformatter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homedir/.vim/bundle/vim-fugitive" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homedir/.vim/bundle/vim-gitgutter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homedir/.vim/bundle/vim-instant-markdown" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homedir/.vim/bundle/vim-pug" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homedir/.vim/bundle/vim-sensible" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homedir/.vim/bundle/vim-sneak" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homedir/.vim/bundle/vim-surround" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homedir/.vim/bundle/vim-vue" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/oh-my-zsh" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/oh-my-zsh/custom/themes/powerlevel9k" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/z-zsh" vcs="Git" />
+  </component>
+</project>
