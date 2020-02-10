@@ -2,18 +2,20 @@
 export ZSH=$HOME/.dotfiles/oh-my-zsh
 # if you want to use this, change your non-ascii font to Droid Sans Mono for Awesome
 # POWERLEVEL9K_MODE='awesome-patched'
-export ZSH_THEME="powerlevel9k/powerlevel9k"
+# export ZSH_THEME="powerlevel9k/powerlevel9k"
 # export ZSH_THEME="agnoster"
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+export ZSH_THEME="spaceship"
+
+# POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 # https://github.com/bhilburn/powerlevel9k#customizing-prompt-segments
 # https://github.com/bhilburn/powerlevel9k/wiki/Stylizing-Your-Prompt
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir nvm vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history time)
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir nvm vcs)
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history time)
 # colorcode test
 # for code ({000..255}) print -P -- "$code: %F{$code}This is how your text would look like%f"
-POWERLEVEL9K_NVM_FOREGROUND='000'
-POWERLEVEL9K_NVM_BACKGROUND='072'
-POWERLEVEL9K_SHOW_CHANGESET=true
+# POWERLEVEL9K_NVM_FOREGROUND='000'
+# POWERLEVEL9K_NVM_BACKGROUND='072'
+# POWERLEVEL9K_SHOW_CHANGESET=true
 #export ZSH_THEME="random"
 
 # Set to this to use case-sensitive completion
@@ -30,7 +32,7 @@ export DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.dotfiles/oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(colorize compleat dirpersist autojump git gulp history cp)
+# plugins=(colorize compleat dirpersist autojump git gulp history cp)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -60,15 +62,6 @@ function set_title(){
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/seanhanford/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
 
 # Uncomment the following line to disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
@@ -115,13 +108,13 @@ plugins=(
 )
 
 # Disabled the sourcing of oh-my-zsh to replace it with zplug
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 ## If you want to disable the sourcing of oh-my-zsh and replace it with zplug, uncomment the next 2-lines and the 1-line above this comment.
 #export ZPLUG_HOME=/usr/local/opt/zplug
 #source $ZPLUG_HOME/init.zsh
 
 # Load custom dotfiles from oh-my-zsh custom folder
-for file in ~/.oh-my-\zsh/custom/sourced/.* ; do
+for file in $HOME/dotfiles/oh\-my-\zsh/custom/sourced/.* ; do
 	source "$file"
 done
 
@@ -148,8 +141,8 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="cot ~/.zshrc"
-alias ohmyzsh="cot ~/.oh-my-zsh"
+alias zshconfig="cot $HOME/.zshrc"
+alias ohmyzsh="cot $HOME/dotfiles/oh-my-zsh"
 
 ## CANNOT DO WITHOUT THIS FUNCTION ##
 # List directory files when cd'ing as in changing directory
@@ -192,11 +185,11 @@ export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 # export PATH="/Users/seanhanford/Sites/webdaemon-blt/vendor/acquia/blt/bin:$PATH"
 export PATH="$(composer config -g home)/vendor/bin:$PATH"
 export PATH="$PATH:/usr/local/opt"
-export PATH="/Users/seanhanford:$PATH"
+export PATH="$HOME:$PATH"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
-export PATH="/Users/seanhanford/vimrc:$PATH"
+export PATH="$HOME/vimrc:$PATH"
 # export JAVA_HOME="/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java"
 # export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home"
 
@@ -224,7 +217,7 @@ alias composer="php /usr/local/bin/composer.phar"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # include Z, yo
-. ~/z.sh
+. $HOME/z.sh
 export PATH="/usr/local/opt/nss/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
@@ -253,9 +246,9 @@ ADS_AC_ZSH_SETUP_PATH=/Users/seanhanford/Library/Caches/ads-cli/autocomplete/zsh
 }
 
 # Adding in drush aliases and customizations originally added to the .bash_profile file
-source ~/.git-prompt.sh
+source $HOME/.git-prompt.sh
 # export PATH="$PATH:/Applications/DevDesktop/tools"
 # export PATH="$PATH:/Applications/DevDesktop/drush_9"
 
-source ~/.zprofile
+source $HOME/dotfiles/.zprofile
 
