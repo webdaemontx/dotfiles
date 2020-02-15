@@ -1,22 +1,6 @@
 # Path to your oh-my-zsh configuration.
-export ZSH=$HOME/.dotfiles/oh-my-zsh
-# if you want to use this, change your non-ascii font to Droid Sans Mono for Awesome
-# POWERLEVEL9K_MODE='awesome-patched'
-# export ZSH_THEME="powerlevel9k/powerlevel9k"
-# export ZSH_THEME="agnoster"
+export ZSH=$HOME/.dotfiles/homedir/oh-my-zsh
 export ZSH_THEME="spaceship"
-
-# POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-# https://github.com/bhilburn/powerlevel9k#customizing-prompt-segments
-# https://github.com/bhilburn/powerlevel9k/wiki/Stylizing-Your-Prompt
-# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir nvm vcs)
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history time)
-# colorcode test
-# for code ({000..255}) print -P -- "$code: %F{$code}This is how your text would look like%f"
-# POWERLEVEL9K_NVM_FOREGROUND='000'
-# POWERLEVEL9K_NVM_BACKGROUND='072'
-# POWERLEVEL9K_SHOW_CHANGESET=true
-#export ZSH_THEME="random"
 
 # Set to this to use case-sensitive completion
 export CASE_SENSITIVE="true"
@@ -26,9 +10,6 @@ export CASE_SENSITIVE="true"
 
 # disable colors in ls
 # export DISABLE_LS_COLORS="true"
-
-# disable autosetting terminal title.
-export DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.dotfiles/oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -85,9 +66,8 @@ HIST_STAMPS="mm/dd/yyyy"
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
+# Standard plugins can be found in ~/.dotfiles/oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.dotfiles/oh-my-zsh/custom/plugins/
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	history
@@ -96,7 +76,7 @@ plugins=(
 	brew
 	common-aliases
 	node
-  zsh-nvm
+        zsh-nvm
 	z
 	colorize
 	iterm2
@@ -107,15 +87,10 @@ plugins=(
 	zsh-autosuggestions
 )
 
-# Disabled the sourcing of oh-my-zsh to replace it with zplug
-# source $ZSH/oh-my-zsh.sh
-## If you want to disable the sourcing of oh-my-zsh and replace it with zplug, uncomment the next 2-lines and the 1-line above this comment.
-#export ZPLUG_HOME=/usr/local/opt/zplug
-#source $ZPLUG_HOME/init.zsh
-
-# Load custom dotfiles from oh-my-zsh custom folder
-for file in $HOME/dotfiles/oh\-my-\zsh/custom/sourced/.* ; do
-	source "$file"
+# Load custom dotfiles into oh-my-zsh custom folder
+for file in $HOME/.dotfiles/homedir/oh\-my\-zsh/custom/sourced/.*; do
+  mv $HOME/.dotfiles/homedir/oh\-my\-zsh/custom/sourced/$file $HOME/.dotfiles/oh\-my-\zsh/custom/sourced/$file
+  source "$file"
 done
 
 # User configuration
@@ -153,13 +128,13 @@ function cd {
 # Go up n levels:
 # Usage .. [n]
 function .. () {
-	local arg=${1:-1};
-	local dir=""
-	while [ $arg -gt 0 ]; do
-		dir="../$dir"
-		arg=$(($arg - 1 ));
-	done
-	cd $dir #>&/dev/null
+  local arg=${1:-1};
+  local dir=""
+  while [ $arg -gt 0 ]; do
+    dir="../$dir"
+    arg=$(($arg - 1 ));
+  done
+cd $dir #>&/dev/null
 }
 
 # Always work in a tmux session if tmux is installed
@@ -172,9 +147,6 @@ function .. () {
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-# Add Python 2.7 to the $PATH
-# export PATH=/Users/seanhanford/Library/Python/2.7/bin:$PATH
-
 # Add Python 3 to the $PATH
 export PATH="/usr/local/Cellar/python/3.7.4_1/bin:$PATH"
 
@@ -182,7 +154,6 @@ export PATH="/usr/local/Cellar/python/3.7.4_1/bin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 # export PATH="$PATH:$HOME/.composer/vendor/bin:$HOME/.composer/vendor/bin/drush"
 # export PATH="$PATH:$HOME/.composer/vendor/bin"
-# export PATH="/Users/seanhanford/Sites/webdaemon-blt/vendor/acquia/blt/bin:$PATH"
 export PATH="$(composer config -g home)/vendor/bin:$PATH"
 export PATH="$PATH:/usr/local/opt"
 export PATH="$HOME:$PATH"
@@ -190,8 +161,6 @@ export PATH="$HOME:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export PATH="$HOME/vimrc:$PATH"
-# export JAVA_HOME="/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java"
-# export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home"
 
 # Add the GO home path
 export GOPATH=$HOME/go
@@ -223,7 +192,7 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 
 # ads autocomplete setup
-ADS_AC_ZSH_SETUP_PATH=/Users/seanhanford/Library/Caches/ads-cli/autocomplete/zsh_setup && test -f $ADS_AC_ZSH_SETUP_PATH && source $ADS_AC_ZSH_SETUP_PATH;function blt() {
+ADS_AC_ZSH_SETUP_PATH=$HOME/Library/Caches/ads-cli/autocomplete/zsh_setup && test -f $ADS_AC_ZSH_SETUP_PATH && source $ADS_AC_ZSH_SETUP_PATH;function blt() {
   if [[ ! -z ${AH_SITE_ENVIRONMENT} ]]; then
     PROJECT_ROOT="/var/www/html/${AH_SITE_GROUP}.${AH_SITE_ENVIRONMENT}"
   elif [ "`git rev-parse --show-cdup 2> /dev/null`" != "" ]; then
@@ -246,9 +215,9 @@ ADS_AC_ZSH_SETUP_PATH=/Users/seanhanford/Library/Caches/ads-cli/autocomplete/zsh
 }
 
 # Adding in drush aliases and customizations originally added to the .bash_profile file
-source $HOME/.git-prompt.sh
+# source $HOME/.git-prompt.sh
 # export PATH="$PATH:/Applications/DevDesktop/tools"
 # export PATH="$PATH:/Applications/DevDesktop/drush_9"
 
-source $HOME/dotfiles/.zprofile
+source $HOME/dotfiles/homedir/.zprofile
 
