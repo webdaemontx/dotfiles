@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh configuration.
-export ZSH=$HOME/.dotfiles/homedir/oh-my-zsh
+export ZSH=$HOME/.dotfiles
+export OH_MY_ZSH=$HOME/.dotfiles/homedir/oh-my-zsh
 export ZSH_THEME="spaceship"
 
 # Set to this to use case-sensitive completion
