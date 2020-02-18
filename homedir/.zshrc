@@ -64,7 +64,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$HOME/oh-my-zsh/custom
+ZSH_CUSTOM=$HOME/dotfiles/oh-my-zsh/custom
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
@@ -79,7 +79,7 @@ plugins=(
 	brew
 	common-aliases
 	node
-    zsh-nvm
+  zsh-nvm
 	z
 	colorize
 	iterm2
@@ -90,9 +90,9 @@ plugins=(
 )
 
 # Load custom dotfiles into oh-my-zsh custom folder
-for file in $HOME/.dotfiles/homedir/oh\-my\-zsh/custom/sourced/.*; do
-    if [ ! -f /$HOME/oh-my-zsh/custom/sourced/$file ]; then
-		cp $HOME/.dotfiles/homedir/oh\-my\-zsh/custom/sourced/$file $HOME/oh-my-zsh/custom/sourced/$file;
+for file in $HOME/.dotfiles/homedir/oh-my-zsh/custom/sourced/.*; do
+    if [ ! -f /$HOME/.dotfiles/oh-my-zsh/custom/sourced/$file ]; then
+		cp $HOME/.dotfiles/homedir/oh-my-zsh/custom/sourced/$file $HOME/.dotfiles/oh-my-zsh/custom/sourced/$file;
 		source "$file";
     fi
 done
