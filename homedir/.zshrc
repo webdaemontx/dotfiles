@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh configuration.
-export ZSH=$HOME/.dotfiles
-export OH_MY_ZSH=$HOME/.dotfiles/homedir/oh-my-zsh
+export ZSH=$HOME/.dotfiles/oh-my-zsh
+# export OH_MY_ZSH=$HOME/.dotfiles/oh-my-zsh
 export ZSH_THEME="spaceship"
 
 # Set to this to use case-sensitive completion
@@ -36,7 +36,7 @@ unsetopt correct
 # fortune
 #
 # ======================================
-#								Functions
+#		Functions
 # ======================================
 function set_title(){
   echo -ne "\033];$(hostname): $(pwd)\007"
@@ -44,6 +44,8 @@ function set_title(){
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+
 
 # Uncomment the following line to disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
@@ -62,7 +64,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=$HOME/oh-my-zsh/custom
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
@@ -77,11 +79,10 @@ plugins=(
 	brew
 	common-aliases
 	node
-        zsh-nvm
+    zsh-nvm
 	z
 	colorize
 	iterm2
-	ruby
 	sudo
 	zsh-navigation-tools
 	zsh-syntax-highlighting
@@ -90,8 +91,10 @@ plugins=(
 
 # Load custom dotfiles into oh-my-zsh custom folder
 for file in $HOME/.dotfiles/homedir/oh\-my\-zsh/custom/sourced/.*; do
-  mv $HOME/.dotfiles/homedir/oh\-my\-zsh/custom/sourced/$file $HOME/.dotfiles/oh\-my-\zsh/custom/sourced/$file
-  source "$file"
+    if [ ! -f /$HOME/oh-my-zsh/custom/sourced/$file ]; then
+		cp $HOME/.dotfiles/homedir/oh\-my\-zsh/custom/sourced/$file $HOME/oh-my-zsh/custom/sourced/$file;
+		source "$file";
+    fi
 done
 
 # User configuration
@@ -118,7 +121,7 @@ fi
 #
 # Example aliases
 alias zshconfig="cot $HOME/.zshrc"
-alias ohmyzsh="cot $HOME/dotfiles/oh-my-zsh"
+alias ohmyzsh="cot $HOME/oh-my-zsh.sh"
 
 ## CANNOT DO WITHOUT THIS FUNCTION ##
 # List directory files when cd'ing as in changing directory
@@ -187,7 +190,7 @@ alias composer="php /usr/local/bin/composer.phar"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # include Z, yo
-. $HOME/z.sh
+. $HOME/.dotfiles/z-zsh/z.sh
 export PATH="/usr/local/opt/nss/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
